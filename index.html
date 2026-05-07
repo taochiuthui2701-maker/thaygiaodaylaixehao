@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thầy dạy Lái Xe Hào - Đào Tạo Lái Xe Chuyên Nghiệp</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4267b2 0%, #1c8adb 45%, #0a2549 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+      padding: 36px 32px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+
+    .header-content {
+      text-align: left;
+      flex: 1;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .header-subtitle {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .header p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-content {
+        text-align: center;
+      }
+
+      .logo img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .header-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .category h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .category p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #f5f7ff;
+    }
+
+    .images {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .images img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      margin: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .contact h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #dce8ff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-btn:hover {
+      transform: scale(1.15) translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .social-btn.facebook:hover {
+      background: #1877f2;
+    }
+
+    .social-btn.zalo:hover {
+      background: #0084ff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src=z7794969250997_3ef5a824868df8326d976538ade7a558.jpg alt="Logo Trung Tâm">
+      </div>
+      <div class="header-content">
+        <h1>Thầy dạy Lái Xe Hào</h1>
+        <div class="header-subtitle">Trung Tâm Đào Tạo Lái Xe Bắc Hà</div>
+        <p>Đào Tạo Lái Xe Chuyên Nghiệp - An Toàn Và Chất Lượng</p>
+      </div>
+    </div>
+
+    <div class="categories">
+      <div class="category">
+        <h3>Hạng A1</h3>
+        <p> Đào tạo người lái xe mô tô hai bánh có dung tích xi-lanh đến 125 cm3 hoặc có công suất động cơ điện đến 11 kW.</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng A02</h3>
+        <p>Đào tạo người lái xe mô tô hai bánh có dung tích xi-lanh  trên 125 cm3 hoặc có công suất động cơ điện trên 11 kW và các loại xe quy định cho giấy phép lái xe hạng A1.</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng A</h3>
+        <p>Đào tạo người lái xe mô tô hai bánh có dung tích xi-lanh  trên 125 cm3 hoặc có công suất động cơ điện trên 11 kW và các loại xe quy định cho giấy phép lái xe hạng A1.</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng B</h3>
+        <p>Đào tạo lái xe ô tô dưới 9 chỗ</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng B01</h3>
+        <p>Đào tạo lái xe ô tô số tự động dưới 9 chỗ</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng C1</h3>
+        <p>Đào tạo lái xe tải dưới 3.5 tấn</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+      <div class="category">
+        <h3>Hạng C</h3>
+        <p>Đào tạo lái xe tải và xe kéo</p>
+        <div class="price">Giá: Liên hệ</div>
+      </div>
+    </div>
+
+    <div class="images">
+      <h2>Hình Ảnh Đào Tạo Lái Xe</h2>
+      <img src="dao-tao-lai-xe-1.jpg" alt="Đào tạo lái xe 1">
+      <img src="dao-tao-lai-xe-2.jpg" alt="Đào tạo lái xe 2">
+      <img src="dao-tao-lai-xe-3.jpg" alt="Đào tạo lái xe 3">
+      <!-- Bạn có thể thêm video và ảnh nữa ở đây -->
+    </div>
+
+    <div class="contact">
+      <h2>Liên Hệ Nhận Hồ Sơ</h2>
+      <p>Để nhận hồ sơ và tư vấn chi tiết, vui lòng liên hệ:</p>
+      <p>Số điện thoại: <a href="tel:0971887476">0971887476</a></p>
+      <p>Email: <a href="mailto:taochiuthui2701@gmail.com">taochiuthui2701@gmail.com</a></p>
+      <p>Địa chỉ đào tạo: 89 Ngô Gia Tự - Tam Sơn - Bắc Ninh</p>
+      <p>Nhắn tin để hỏi trao đổi và đăng ký ngay!</p>
+      
+      <div class="social-media">
+        <a href="https://www.facebook.com/share/18qb1AFdE8/?mibextid=wwXIfr" target="_blank" class="social-btn facebook" title="Theo dõi Facebook">f</a>
+        <a href="https://zalo.me/0971887476" target="_blank" class="social-btn zalo" title="Nhắn tin Zalo">Z</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+</body>
+</html>
